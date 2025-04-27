@@ -28,4 +28,6 @@ pip install triton-windows
 # pip install flash_attn
 # pip install sageattention
 
+# run and open browser to port which is displayed
+FramePack> python.exe .\demo_gradio.py
 ~~~
