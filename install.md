@@ -6,7 +6,7 @@
 
 # in windows powershell
 python.exe -m pip install --upgrade pip
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 pip install accelerate
 pip install diffusers
 pip install transformers
@@ -21,12 +21,18 @@ pip install torchsde
 pip install einops
 pip install opencv-contrib-python
 pip install safetensors
-pip install triton-windows
 
-# following have versions conflicts or run time errors 
-# pip install xformers
-# pip install flash_attn
-# pip install sageattention
+
+# install sage-attention
+# see: https://github.com/woct0rdho/SageAttention/releases/tag/v2.1.1-windows
+pip install triton-windows
+pip install https://github.com/woct0rdho/SageAttention/releases/download/v2.1.1-windows/sageattention-2.1.1+cu128torch2.7.0-cp312-cp312-win_amd64.whl
+# overwrite python installation for sage attention to add support for sm75 (nvidia rtx2060 super)
+#  orignal source at: https://github.com/XUANNISSAN/SageAttention-SM75-path/tree/main
+# This usually is installed at c:\users\user\appdata\local\programs\python\python312\lib\site-packages\sageattention
+#  
+
+
 
 # run and open browser to port which is displayed
 FramePack> python.exe .\demo_gradio.py
